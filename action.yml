@@ -1,0 +1,32 @@
+name: 'Notionate'
+description: 'Transform GitHub documentation into beautiful Notion pages'
+branding:
+  icon: 'book'
+  color: 'blue'
+
+inputs:
+  source:
+    description: 'Source directory or file'
+    required: true
+  notion_token:
+    description: 'Notion API token'
+    required: true
+  destination_id:
+    description: 'Notion destination ID (page or database)'
+    required: true
+  destination_type:
+    description: 'Destination type (wiki/database/page)'
+    required: false
+    default: 'wiki'
+
+outputs:
+  status:
+    description: 'Status of the sync operation (success/partial/failed)'
+  updated_pages:
+    description: 'List of updated page IDs'
+  errors:
+    description: 'List of errors encountered during sync (if any)'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

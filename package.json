@@ -1,0 +1,51 @@
+{
+  "name": "notionate",
+  "version": "1.0.0",
+  "description": "Transform GitHub documentation into beautiful Notion pages",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist",
+    "build:watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:live": "ts-node test-local.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "prepare": "npm run build",
+    "release": "release-it"
+  },
+  "keywords": [
+    "github",
+    "notion",
+    "documentation",
+    "markdown",
+    "sync",
+    "github-action"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@notionhq/client": "^2.2.15",
+    "@tryfabric/martian": "^1.2.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^20.4.5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@vercel/ncc": "^0.38.3",
+    "dotenv": "^16.4.7",
+    "eslint": "^8.46.0",
+    "jest": "^29.6.2",
+    "prettier": "^3.0.0",
+    "release-it": "^17.1.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.1.6"
+  }
+}
